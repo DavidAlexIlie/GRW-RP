@@ -10,50 +10,29 @@ Did you ever look at your Ghost and think: [i]"Mate, nobody believes you're here
 
 Well, now you can blend in. Mostly. The NPCs still think it's weird that you sprint everywhere and drive like a lunatic, but that's a [i]you[/i] problem.
 
-GRWRP is a small Windows app with on/off switches that hide gear on your character, so you can roleplay as a civilian:
+GRWRP gives you four switches: [b]Hide weapons[/b], [b]Hide backpack[/b], [b]Hide earpiece[/b] and [b]Hide pants holster[/b].
 
-[list]
-[*][b]Hide weapons[/b]: the Super Shorty and/or the D-50 pistol become invisible. They still work. Choose which in Settings.
-[*][b]Hide backpack[/b]: the Hydra (CamelBak) backpack.
-[*][b]Hide earpiece[/b]: the radio earpiece/headset.
-[*][b]Hide pants holster[/b]: removes the leg holster (strap and sheath) from the pants you pick in a visual picker.
-[/list]
-
-Changes apply the next time you start the game. [b]Single-player only.[/b]
-
-[size=4][b]Before you start: Easy Anti-Cheat[/b][/size]
-The game won't run with modified files while Easy Anti-Cheat is active, so you have to switch it off yourself (GRWRP doesn't touch it):
+[size=4][b]Step 1: Turn off Easy Anti-Cheat[/b][/size]
 [list=1]
-[*]Go to your game folder, for example [i]...\steamapps\common\Wildlands[/i].
+[*]Open your game folder, for example [i]...\steamapps\common\Wildlands[/i].
 [*]Open the [b]EasyAntiCheat[/b] folder and [b]delete everything inside it[/b]. Leave the empty folder.
 [/list]
 [color=#D65A4F][b]Single-player only.[/b] Without Easy Anti-Cheat, do NOT play Ghost War (PvP) or join other people's sessions. You risk a ban, and that one's on you, not on the llamas.[/color]
-To get anti-cheat back: in Steam, right-click the game > Properties > Installed Files > [i]Verify integrity of game files[/i]. This also removes the mod, so turn your GRWRP switches on again afterwards if you want them.
 
-[size=4][b]How to use[/b][/size]
+[size=4][b]Step 2: Use GRWRP[/b][/size]
 [list=1]
-[*]Unzip anywhere. Putting the [i]GRWRP[/i] folder inside the game folder lets it find the game instantly.
-[*]Close the game and run [i]GRWRP.exe[/i]. It looks for the game in your Steam libraries, Ubisoft Connect, Epic and on all drives. If it can't find the game, browse to the folder that contains [i]GRW.exe[/i].
-[*]Flip the switches, then start the game.
+[*]Unzip the download and put the [b]GRWRP[/b] folder inside your game folder.
+[*][b]Close the game[/b] and run [i]GRWRP\GRWRP.exe[/i]. It finds the game by itself. If it can't, click [i]Browse[/i] and pick the folder with [i]GRW.exe[/i].
+[*]Flip the switches you want. A switch turns gold when it's on.
+[*]For holsters, click the little pants icon next to [i]Hide pants holster[/i], click the pants you wear, then click [i]Finish[/i].
+[*]Start the game.
 [/list]
-While the game is running, the app locks itself, because game files can't be changed while they're in use.
+To choose which weapons get hidden (shotgun, pistol or both), click the cog in the top-right corner.
+To undo anything, flip that switch off again.
 
-[size=4][b]How it works and how to undo it[/b][/size]
-[list]
-[*]GRWRP edits the game's .forge archives [b]on your PC[/b]. It never replaces them. For each hidden model it writes a modified copy at the end of the archive, then points the archive's index at that copy. The model is kept but draws no triangles.
-[*]Before changing anything, it saves the exact original index bytes to a small undo file next to the archive.
-[*][b]Turning a switch OFF restores those original bytes[/b], so the game reads its untouched data again.
-[*]To remove everything: turn every switch OFF. Steam's [i]Verify integrity of game files[/i] also restores the originals. After a game update, verify files, then switch your options on again.
-[/list]
+[size=4][b]Uninstall[/b][/size]
+Flip every switch off and delete the GRWRP folder. To get Easy Anti-Cheat back, use Steam's [i]Verify integrity of game files[/i].
 
-[size=4][b]Is this safe?[/b][/size]
-[list]
-[*][b]Full source code[/b] is included as an optional download and on GitHub: [url=https://github.com/DavidAlexIlie/GRW-RP]github.com/DavidAlexIlie/GRW-RP[/url]. You can read it, run it with Python, or build the exe yourself.
-[*][b]No internet access.[/b] The app has no network code, and Qt's network module isn't even bundled. No updates, telemetry or downloads.
-[*][b]No game files are shipped.[/b] The pants previews are rendered on your own PC, from your own game files.
-[*][b]It only touches what you switch on[/b], and every change can be reverted.
-[*][b]VirusTotal:[/b] [url=https://www.virustotal.com/gui/file/2c2ce1c520c5ab4efecff239dc871457fc0cb7279be7c84cd6f33a92f1976bb9]scan report[/url]. Apps packaged with PyInstaller are sometimes flagged as false positives, which is why the source is included.
-[*]The app itself doesn't touch anti-cheat. You switch Easy Anti-Cheat off yourself (see above), so use it in single-player only. Modified game files in online modes are at your own risk.
-[/list]
+How it works, the source code and a [url=https://www.virustotal.com/gui/file/2c2ce1c520c5ab4efecff239dc871457fc0cb7279be7c84cd6f33a92f1976bb9]VirusTotal scan[/url] are on [url=https://github.com/DavidAlexIlie/GRW-RP]GitHub[/url].
 
-[i]Not affiliated with or endorsed by Ubisoft. Ghost Recon Wildlands is a trademark of Ubisoft Entertainment.[/i]
+[i]Not affiliated with or endorsed by Ubisoft.[/i]
