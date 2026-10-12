@@ -1,0 +1,42 @@
+[youtube]mqBH2iFz04A[/youtube]
+
+[size=5][b]GRWRP – Ghost Recon Wildlands RolePlay[/b][/size]
+
+A small Windows app with on/off switches that hide gear on your character, so you can roleplay as a civilian:
+
+[list]
+[*][b]Hide weapons[/b]: the Super Shorty and/or the D-50 pistol become invisible. They still work. Choose which in Settings.
+[*][b]Hide backpack[/b]: the Hydra (CamelBak) backpack.
+[*][b]Hide earpiece[/b]: the radio earpiece/headset.
+[*][b]Hide pants holster[/b]: removes the leg holster (strap and sheath) from the pants you pick in a visual picker.
+[/list]
+
+Changes apply the next time you start the game. [b]Single-player only.[/b]
+
+[size=4][b]How to use[/b][/size]
+[list=1]
+[*]Unzip anywhere. Putting the [i]GRWRP[/i] folder inside the game folder lets it find the game instantly.
+[*]Close the game and run [i]GRWRP.exe[/i]. It looks for the game in your Steam libraries, Ubisoft Connect, Epic and on all drives. If it can't find the game, browse to the folder that contains [i]GRW.exe[/i].
+[*]Flip the switches, then start the game.
+[/list]
+While the game is running, the app locks itself, because game files can't be changed while they're in use.
+
+[size=4][b]How it works and how to undo it[/b][/size]
+[list]
+[*]GRWRP edits the game's .forge archives [b]on your PC[/b]. It never replaces them. For each hidden model it writes a modified copy at the end of the archive, then points the archive's index at that copy. The model is kept but draws no triangles.
+[*]Before changing anything, it saves the exact original index bytes to a small undo file next to the archive.
+[*][b]Turning a switch OFF restores those original bytes[/b], so the game reads its untouched data again.
+[*]To remove everything: turn every switch OFF. Steam's [i]Verify integrity of game files[/i] also restores the originals. After a game update, verify files, then switch your options on again.
+[/list]
+
+[size=4][b]Is this safe?[/b][/size]
+[list]
+[*][b]Full source code[/b] is included as an optional download and on GitHub: [url=https://github.com/DavidAlexIlie/GRW-RP]github.com/DavidAlexIlie/GRW-RP[/url]. You can read it, run it with Python, or build the exe yourself.
+[*][b]No internet access.[/b] The app has no network code, and Qt's network module isn't even bundled. No updates, telemetry or downloads.
+[*][b]No game files are shipped.[/b] The pants previews are rendered on your own PC, from your own game files.
+[*][b]It only touches what you switch on[/b], and every change can be reverted.
+[*][b]VirusTotal:[/b] [url=https://www.virustotal.com/gui/file/2c2ce1c520c5ab4efecff239dc871457fc0cb7279be7c84cd6f33a92f1976bb9]scan report[/url]. Apps packaged with PyInstaller are sometimes flagged as false positives, which is why the source is included.
+[*]The app doesn't touch anti-cheat. Use it in single-player only. Modified game files in online modes are at your own risk.
+[/list]
+
+[i]Not affiliated with or endorsed by Ubisoft. Ghost Recon Wildlands is a trademark of Ubisoft Entertainment.[/i]

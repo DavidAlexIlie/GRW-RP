@@ -1,5 +1,9 @@
 # GRWRP – Ghost Recon Wildlands RolePlay
 
+[![GRWRP video](https://img.youtube.com/vi/mqBH2iFz04A/maxresdefault.jpg)](https://youtu.be/mqBH2iFz04A)
+
+▶ **[Watch the video](https://youtu.be/mqBH2iFz04A)**
+
 A small Windows app with on/off switches that hide gear on your character, so you can roleplay as a civilian:
 
 - **Hide weapons**: the Super Shorty and/or the D-50 pistol become invisible. They still work. Choose which in Settings.
@@ -33,7 +37,7 @@ While the game is running, the app locks itself, because game files can't be cha
 - **No internet access.** The app has no network code, and Qt's network module isn't even bundled. No updates, telemetry or downloads.
 - **No game files are shipped.** The pants previews are rendered on your own PC, from your own game files, the first time you open the picker. The download contains only the app, an icon, two badge images and a list of model names.
 - **It only touches what you switch on**, and every change can be reverted (see above).
-- **Antivirus warnings:** apps packaged with PyInstaller are sometimes flagged as false positives. That's why the source is included. VirusTotal report: *(add link)*
+- **Antivirus warnings:** apps packaged with PyInstaller are sometimes flagged as false positives. That's why the source is included. [VirusTotal report](https://www.virustotal.com/gui/file/2c2ce1c520c5ab4efecff239dc871457fc0cb7279be7c84cd6f33a92f1976bb9)
 - The app doesn't touch anti-cheat. Use it in single-player only. Modified game files in online modes are at your own risk.
 
 ## Building from source
