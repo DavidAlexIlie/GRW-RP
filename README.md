@@ -13,6 +13,15 @@ A small Windows app with on/off switches that hide gear on your character, so yo
 
 Changes apply the next time you start the game. **Single-player only.**
 
+## Before you start: Easy Anti-Cheat
+The game won't run with modified files while Easy Anti-Cheat is active. You have to switch it off yourself; GRWRP doesn't touch it.
+1. Go to your game folder, for example `...\steamapps\common\Wildlands`.
+2. Open the **EasyAntiCheat** folder and **delete everything inside it**. Leave the empty folder.
+
+> **Single-player only.** Without Easy Anti-Cheat, do **not** play Ghost War (PvP) or join other people's sessions. You risk a ban.
+
+To get anti-cheat back, use Steam's *Verify integrity of game files*. This also removes the mod, so switch your options on again afterwards if you still want them.
+
 ## How to use
 1. Unzip anywhere. Putting the `GRWRP` folder inside the game folder lets it find the game instantly.
 2. Close the game and run `GRWRP.exe`.
@@ -35,10 +44,10 @@ While the game is running, the app locks itself, because game files can't be cha
 ## Is this safe?
 - **Full source code is included** (`GRWRP_source.zip`). You can read it, run it with Python (`python app.py`), or build the exe yourself (`build.bat`).
 - **No internet access.** The app has no network code, and Qt's network module isn't even bundled. No updates, telemetry or downloads.
-- **No game files are shipped.** The pants previews are rendered on your own PC, from your own game files, the first time you open the picker. The download contains only the app, an icon, two badge images and a list of model names.
+- **No game files are shipped.** The pants previews are rendered on your own PC, from your own game files, in the background the first time you start the app. The download contains only the app, an icon, two badge images and a list of model names.
 - **It only touches what you switch on**, and every change can be reverted (see above).
 - **Antivirus warnings:** apps packaged with PyInstaller are sometimes flagged as false positives. That's why the source is included. [VirusTotal report](https://www.virustotal.com/gui/file/2c2ce1c520c5ab4efecff239dc871457fc0cb7279be7c84cd6f33a92f1976bb9)
-- The app doesn't touch anti-cheat. Use it in single-player only. Modified game files in online modes are at your own risk.
+- The app itself doesn't touch anti-cheat. You switch Easy Anti-Cheat off yourself (see above), so use it in single-player only. Modified game files in online modes are at your own risk.
 
 ## Building from source
 Requires Windows and Python 3.10+. Run `build.bat`, or run `python app.py` directly after `pip install -r requirements.txt`.
