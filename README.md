@@ -13,15 +13,6 @@ A small Windows app with on/off switches that hide gear on your character, so yo
 
 Changes apply the next time you start the game. **Single-player only.**
 
-## Before you start: Easy Anti-Cheat
-The game won't run with modified files while Easy Anti-Cheat is active. You have to switch it off yourself; GRWRP doesn't touch it.
-1. Go to your game folder, for example `...\steamapps\common\Wildlands`.
-2. Open the **EasyAntiCheat** folder and **delete everything inside it**. Leave the empty folder.
-
-> **Single-player only.** Without Easy Anti-Cheat, do **not** play Ghost War (PvP) or join other people's sessions. You risk a ban.
-
-To get anti-cheat back, use Steam's *Verify integrity of game files*. This also removes the mod, so switch your options on again afterwards if you still want them.
-
 ## How to use
 1. Unzip anywhere. Putting the `GRWRP` folder inside the game folder lets it find the game instantly.
 2. Close the game and run `GRWRP.exe`.
