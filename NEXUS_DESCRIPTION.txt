@@ -2,7 +2,15 @@
 
 [size=5][b]GRWRP – Ghost Recon Wildlands RolePlay[/b][/size]
 
-A small Windows app with on/off switches that hide gear on your character, so you can roleplay as a civilian:
+Did you ever wish you were just a regular Bolivian, stuck between a cartel that owns the whole country, a military that shoots first, and four American tourists who "liberate" your village with a 40mm grenade launcher?
+
+Did you ever want to walk into Santa Blanca territory, buy some coca leaves at the market, and [i]not[/i] get recognized because you're wearing a plate carrier, a Peltor headset, a CamelBak and two rifles strapped to your back?
+
+Did you ever look at your Ghost and think: [i]"Mate, nobody believes you're here for the llamas."[/i]
+
+Well, now you can blend in. Mostly. The NPCs still think it's weird that you sprint everywhere and drive like a lunatic, but that's a [i]you[/i] problem.
+
+GRWRP is a small Windows app with on/off switches that hide gear on your character, so you can roleplay as a civilian:
 
 [list]
 [*][b]Hide weapons[/b]: the Super Shorty and/or the D-50 pistol become invisible. They still work. Choose which in Settings.
