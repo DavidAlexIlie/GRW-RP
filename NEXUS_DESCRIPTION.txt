@@ -21,6 +21,15 @@ GRWRP is a small Windows app with on/off switches that hide gear on your charact
 
 Changes apply the next time you start the game. [b]Single-player only.[/b]
 
+[size=4][b]Before you start: Easy Anti-Cheat[/b][/size]
+The game won't run with modified files while Easy Anti-Cheat is active, so you have to switch it off yourself (GRWRP doesn't touch it):
+[list=1]
+[*]Go to your game folder, for example [i]...\steamapps\common\Wildlands[/i].
+[*]Open the [b]EasyAntiCheat[/b] folder and [b]delete everything inside it[/b]. Leave the empty folder.
+[/list]
+[color=#D65A4F][b]Single-player only.[/b] Without Easy Anti-Cheat, do NOT play Ghost War (PvP) or join other people's sessions. You risk a ban, and that one's on you, not on the llamas.[/color]
+To get anti-cheat back: in Steam, right-click the game > Properties > Installed Files > [i]Verify integrity of game files[/i]. This also removes the mod, so turn your GRWRP switches on again afterwards if you want them.
+
 [size=4][b]How to use[/b][/size]
 [list=1]
 [*]Unzip anywhere. Putting the [i]GRWRP[/i] folder inside the game folder lets it find the game instantly.
@@ -44,7 +53,7 @@ While the game is running, the app locks itself, because game files can't be cha
 [*][b]No game files are shipped.[/b] The pants previews are rendered on your own PC, from your own game files.
 [*][b]It only touches what you switch on[/b], and every change can be reverted.
 [*][b]VirusTotal:[/b] [url=https://www.virustotal.com/gui/file/2c2ce1c520c5ab4efecff239dc871457fc0cb7279be7c84cd6f33a92f1976bb9]scan report[/url]. Apps packaged with PyInstaller are sometimes flagged as false positives, which is why the source is included.
-[*]The app doesn't touch anti-cheat. Use it in single-player only. Modified game files in online modes are at your own risk.
+[*]The app itself doesn't touch anti-cheat. You switch Easy Anti-Cheat off yourself (see above), so use it in single-player only. Modified game files in online modes are at your own risk.
 [/list]
 
 [i]Not affiliated with or endorsed by Ubisoft. Ghost Recon Wildlands is a trademark of Ubisoft Entertainment.[/i]
