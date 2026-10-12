@@ -552,7 +552,15 @@ class Main(QMainWindow):
         self.cfg['game_dir'] = d; save_config(self.cfg); os.chdir(d)
         try: G.migrate_legacy()
         except Exception as e: QMessageBox.warning(self, APP, 'Could not migrate the old mod version:\n%s' % e)
+        # a game update / file verification replaces archives: forget undo data that no longer applies
+        try: reset = G.prune_stale()
+        except Exception: reset = set()
         st = G.status()
+        for p in G.PROFILES:
+            if not st[p]: self.cfg.pop(p + '_applied', None)
+        if reset:
+            QTimer.singleShot(600, lambda: self.toast.show_msg(
+                'The game was updated or verified, so your switches were reset. Turn them on again.', 6000))
         # adopt what is already applied on disk (older versions of this tool)
         if st['holster'] and 'holster_applied' not in self.cfg: self.cfg['holster_applied'] = self.cfg.setdefault('holster_pants', 'all')
         if st['weapons'] and 'weapons_applied' not in self.cfg: self.cfg['weapons_applied'] = self.cfg.setdefault('weapons_mode', 'both')

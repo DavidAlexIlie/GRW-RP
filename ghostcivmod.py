@@ -84,19 +84,50 @@ def apply_rows(forge, rows, profile, transform, tick=noprogress):
     with open(up, 'w') as u: json.dump(undo, u)
     return len(plans)
 
+def live_pairs(forge, undo):
+    """Undo (index, name) pairs whose index entry still points at data we appended.
+    After a game update replaces the archive, nothing matches and restoring would corrupt it."""
+    pairs = undo['patches']; live = []
+    size = os.path.getsize(forge)
+    with open(forge, 'rb') as f:
+        for i in range(0, len(pairs) - 1, 2):
+            (ipos, ihex), npair = pairs[i], pairs[i + 1]
+            if ipos + 20 > size: continue
+            f.seek(ipos); cur = f.read(20); orig = bytes.fromhex(ihex)
+            off, fid, _ = struct.unpack('<QQI', cur); ooff, ofid, _ = struct.unpack('<QQI', orig)
+            if cur != orig and fid == ofid and undo['size'] <= off < size:
+                live += [pairs[i], npair]
+    return live
+
 def revert(forge, profile):
     up = undo_path(forge, profile)
     if not os.path.exists(up): return 0
     undo = json.load(open(up))
-    with open(forge, 'r+b') as f:
-        for pos, hx in undo['patches']:
-            f.seek(pos); f.write(bytes.fromhex(hx))
-        f.seek(0, 2)
-        # cut our appended data off only if it is the last thing in the file and no other profile is active
-        if f.tell() == undo.get('end', -1) and not other_undos(forge, profile):
-            f.truncate(undo['size'])
+    live = live_pairs(forge, undo)
+    if live:
+        with open(forge, 'r+b') as f:
+            for pos, hx in live:
+                f.seek(pos); f.write(bytes.fromhex(hx))
+            f.seek(0, 2)
+            # cut our appended data off only if it is the last thing in the file and no other profile is active
+            if len(live) == len(undo['patches']) and f.tell() == undo.get('end', -1) and not other_undos(forge, profile):
+                f.truncate(undo['size'])
     os.remove(up)
     return 1
+
+def prune_stale():
+    """Drop undo files that no longer match their archive (e.g. Steam updated or verified the game).
+    Returns the profiles that were affected."""
+    hit = set()
+    for fg in all_forges():
+        for up in glob.glob(glob.escape(fg) + '.civmod*undo.json'):
+            try: undo = json.load(open(up))
+            except Exception: continue
+            if not live_pairs(fg, undo):
+                os.remove(up)
+                name = os.path.basename(up)[len(os.path.basename(fg)):]
+                hit.add(name.replace('.civmod_', '').replace('_undo.json', '').replace('.json', '') or LEGACY)
+    return hit
 
 def select_rows(rx_or_names):
     """[(forge, rows)] for MESHY entries whose name matches a regex or is in a name set."""
