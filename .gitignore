@@ -4,3 +4,4 @@ release/
 __pycache__/
 *.spec
 *.pyc
+media/_cache/
